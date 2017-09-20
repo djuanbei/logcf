@@ -2,6 +2,7 @@ import os
 from os import listdir
 import datetime
 import sys
+import time
 
 import subprocess
 
@@ -10,7 +11,7 @@ for f in listdir("cases"):
     cmd = 'AND.exe cases/'+f
     print( cmd)
     now=datetime.datetime.now()
-
+    start=time.time()
     r=subprocess.check_output(cmd,shell=False)
     r=str(r)
     realrootnum=len([c for c in r if r=='['])
@@ -20,6 +21,5 @@ for f in listdir("cases"):
         realrootnum-=1
     print("real root number is: "+str(realrootnum))
 
-    print (datetime.datetime.now()-now)
+    print ("time(s): "+str(time.time()-start))
 
-    
