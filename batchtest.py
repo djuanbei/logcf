@@ -16,7 +16,7 @@ for f in listdir("cases"):
     realrootnum=len([c for c in r if r=='['])
     if realrootnum <1 :
         realrootnum=0
-    else
+    else:
         realrootnum-=1
     print("real root number is: "+realrootnum)
 
