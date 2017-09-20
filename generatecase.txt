@@ -1,0 +1,13 @@
+lagrangeCases:=proc()
+    local p, degg, pp
+    p:=1
+    for p from 6 to 14 do
+        degg:=pow(2,p);
+        pp:randpoly([x],degg);
+        
+        filename:=cat(cat("lag", degg),".txt")
+        fd:=fopen(filename,WRITE);
+        fprintf(fd,"%A\n",pp);
+        fclose(fd);
+    end do
+end proc
