@@ -18,7 +18,7 @@ for f in listdir("cases"):
         realrootnum=0
     else:
         realrootnum-=1
-    print("real root number is: "+realrootnum)
+    print("real root number is: "+str(realrootnum))
 
     print (datetime.datetime.now()-now)
 
