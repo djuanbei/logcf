@@ -1,6 +1,7 @@
 import os
 from os import listdir
 import datetime
+import subprocess
 
 
 for f in listdir("cases"):
@@ -8,7 +9,9 @@ for f in listdir("cases"):
     cmd = 'AND.exe cases/'+f
     print( cmd)
     now=datetime.datetime.now()
-    os.system(cmd)
+    p=subprocess.Popen([cmd],stdout=subprocess.PIPE)
+    out=p.stdout.read()
+    # os.system(cmd)
     print (datetime.datetime.now()-now)
 
     
