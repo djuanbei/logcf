@@ -1,13 +1,15 @@
 import os
 from os import listdir
 import datetime
+import sys
 
 import subprocess
 
 
 
 for f in listdir("cases"):
-    print(f)
+    fsock = open('error.log', 'w')
+    sys.stderr = fsock  
     cmd = 'AND.exe cases/'+f
     print( cmd)
     now=datetime.datetime.now()
