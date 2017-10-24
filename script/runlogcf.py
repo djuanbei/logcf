@@ -3,7 +3,7 @@ import sys
 import os
 from time import clock
 import time
-
+import subprocess
 from os import listdir
 from os.path import isfile, join
 
@@ -37,9 +37,12 @@ def runOneClassBenchMark(path, LOGCF):
         baseName=fileName.split('.')[0]
         
         result=baseName+", >"+str(timeout)+"\n"
+
+        
         if timelimitexecution.run_with_limited_time(os.system,(command, ),{}, timeout):
             result=baseName+","+str(time.time()-start)+"\n"
         else:
+            os.system("killall "+LOGCF.split('/')[-1])
             print "timeout "
 
         output.write(result)
@@ -54,7 +57,6 @@ if __name__ == '__main__':
     LOGCF=sys.argv[1]
     inputs=sys.argv[2]
     
-
     
     DirecList=listAllDirectories(inputs)
     

@@ -1,11 +1,12 @@
 #!/usr/bin/python
-import sys
+1;4205;0cimport sys
 import os
 from time import clock
 import time
 
 from os import listdir
 from os.path import isfile, join
+
 
 
 import timelimitexecution
@@ -41,6 +42,8 @@ def runOneClassBenchMark(path, SLV):
         if timelimitexecution.run_with_limited_time(os.system,(command, ),{}, timeout):
             result=baseName+","+str(time.time()-start)+"\n"
         else:
+            
+            os.system("killall "+SLV.split('/')[-1])
             print "timeout "
         output.write(result)
 
