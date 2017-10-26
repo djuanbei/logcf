@@ -31,12 +31,12 @@ if __name__ == '__main__':
                 os.mkdir(directory)       
 
             with open(output,"w+") as f1:
-                atext= f.read().replace('\n',' ')
-                atext= atext.replace('\n',' ')
-                atext= atext.replace('\r',' ')
+                atext= f.read().replace('\n','')
+                atext= atext.replace('\n','')
+                atext= atext.replace('\r','')
                 atext=atext.replace("  "," ")
                 atext=atext.replace("  "," ")
-                atext=atext.replace("  "," ")
+                atext=atext.replace(" ","")
                 f1.write(atext)
                 f1.close()
             f.close()
