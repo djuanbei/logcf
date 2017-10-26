@@ -1,5 +1,5 @@
 #!/usr/bin/python
-1;4205;0cimport sys
+import sys
 import os
 from time import clock
 import time
